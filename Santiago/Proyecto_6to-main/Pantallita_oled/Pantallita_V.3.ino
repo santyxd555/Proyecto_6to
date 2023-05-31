@@ -29,8 +29,8 @@ void setup() {
   // Muestra el mensaje de bienvenida
   display.setTextSize(2);
   display.setTextColor(WHITE);
-  display.setCursor(20,20);
-  display.println("  MENU") ;
+  display.setCursor(10,20);
+  display.println("INICIANDO") ;
   display.display();
   delay(2000);
 
