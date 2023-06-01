@@ -70,7 +70,7 @@ void loop() {
  
   switch(estadoactual)
   {
-    case MENU_MANUAL:
+    case MENU_MANUAL: //Aparece el menu con la opcion manual (que esta seleccionada) y la opcion automatica
     {
         display.clearDisplay();// Limpia la pantalla OLED
         display.setTextSize(2);  // Muestra el texto en la pantalla
@@ -84,7 +84,7 @@ void loop() {
     }
     break;
 
-    case MENU_AUTOMATICO:
+    case MENU_AUTOMATICO: //Aparece el menu con la opcion manual y la opcion automatica(que esta seleccionada)
     {
         display.clearDisplay();// Limpia la pantalla OLED
         display.setTextSize(2);  // Muestra el texto en la pantalla
@@ -98,7 +98,7 @@ void loop() {
     }
     break;
 
-    case MODO_AUTOMATICO_1:
+    case MODO_AUTOMATICO_1: //este es el modo automatico con las opciones panoramica (que esta seleccionada) y la opcion movil
     {
         display.clearDisplay();// Limpia la pantalla OLED
         display.setTextSize(2);  // Muestra el texto en la pantalla
@@ -112,7 +112,7 @@ void loop() {
     }
     break;
 
-    case MODO_AUTOMATICO_2:
+    case MODO_AUTOMATICO_2: //este es el modo automatico con las opciones panoramica y la opcion movil (que esta seleccionada)
     {
         display.clearDisplay();// Limpia la pantalla OLED
         display.setTextSize(2);  // Muestra el texto en la pantalla
@@ -127,7 +127,7 @@ void loop() {
     break;
   }
 
-    if(analogY >= 800 && flg1 == 1)
+    if(analogY >= 800 && flg1 == 1) //sirve para poder cambiar entre modos y la flg sirve para que no puedas cambiar de modos de una mejor manera
     {
         estadoactual = estadoactual - 1;
         flg1 = 0;
@@ -141,12 +141,9 @@ void loop() {
 
     if(estadoactual == MENU_AUTOMATICO && digitalRead(pulAnalog) == LOW)
     {
-        estadoactual = MODO_AUTOMATICO_1;
+        estadoactual = MODO_AUTOMATICO_1; //esto sirve para que cuando cambias de modo puedas seleccioanr el siguiente sin problemas
         flg1 = 0;
     }
-
-
-
 
 
 
