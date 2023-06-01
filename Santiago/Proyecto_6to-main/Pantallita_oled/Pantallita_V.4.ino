@@ -19,7 +19,7 @@ volatile int microSegundos; //timer 2
 #define pulAnalog 4
 int analogY; //para guardar el valor de la variable del analogico
 int analogX;
-int flg1 = 0;
+int flg1 = 0; //sirve para poder cambiar entre modos y que no tenga ningun problema
 
 
 void setup() {
