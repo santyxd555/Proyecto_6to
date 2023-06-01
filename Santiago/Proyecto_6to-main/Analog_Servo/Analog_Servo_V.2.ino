@@ -1,9 +1,6 @@
 // Librerias I2C para controlar el mpu6050
 // la libreria MPU6050.h necesita I2Cdev.h, I2Cdev.h necesita Wire.h
 #include <Servo.h>
-#include "I2Cdev.h"
-#include "MPU6050.h"
-#include "Wire.h"
 
 Servo servo1;
 
@@ -26,7 +23,6 @@ int analogX;
 
 void setup() {
   Serial.begin(9600);    //Iniciando puerto serial
-  Wire.begin();           //Iniciando I2C  
 
   servo1.attach(servopin1);
   servo1.write(angulo);
