@@ -174,13 +174,9 @@ void loop() {
     if(estadoactual == MENU_AUTOMATICO && digitalRead(pulAnalog) == LOW)
     {
         estadoactual = MODO_AUTOMATICO_1; //esto sirve para que cuando cambias de modo puedas seleccioanr el siguiente sin problemas
-        flg1 = 1;
+        flg1 = 0;
     }
-
-
-
-
-
+ 
 
   display.display();  // Actualiza la pantalla OLED
 }
