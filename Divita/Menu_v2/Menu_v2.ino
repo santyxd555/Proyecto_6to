@@ -185,9 +185,14 @@ if(analogRead(SW)==LOW && Cuad==1){
   Menu=3;}
 }
 
-if(Menu==1)
-{if(mapY == 7){Cuad=0;}
-else if(mapY == 0){Cuad=1;} 
+if(Menu==1){
+  if(mapY == 7){
+    Cuad=0;
+  }
+else 
+  if(mapY == 0){
+    Cuad=1;
+  } 
 if(analogRead(SW)==LOW && Cuad==0){
   display.clearDisplay();
   flg=0;}
