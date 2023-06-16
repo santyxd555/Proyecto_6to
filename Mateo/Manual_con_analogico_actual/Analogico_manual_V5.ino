@@ -82,8 +82,8 @@ void loop() {
         if(valorServo >= 180){
           valorServo = 180;
         }
-        if(valorServo <= 0){
-          valorServo = 0;
+        if(valorServo <= 50){
+          valorServo = 50;
         }
 
     ////////////////// SERVO 2 //////////////////
@@ -108,8 +108,8 @@ void loop() {
         if(valorServo2 >= 180){
           valorServo2 = 180;
         }
-        if(valorServo2 <= 50){
-          valorServo2 = 50;
+        if(valorServo2 <= 0){
+          valorServo2 = 0;
         }
 
      /* VER DE MANERA SERIAL, SERVO 1
