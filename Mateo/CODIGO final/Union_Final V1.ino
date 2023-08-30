@@ -19,7 +19,6 @@ int Y, X, mapX, mapY;
 int flg1=0, flg2=0, flg3=0;
 bool unavez = 0;
 
-
 #define SW 6
 
 volatile int milis;         //Mi variable
