@@ -37,19 +37,20 @@ void setup()
 void loop()
 {
   mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-  data.X = map(ax, -17000, 17000, 0, 180); // X axis data
-  data.Y = map(ay, -17000, 17000, 0, 180); 
+  data.X = map(ax, -17000, 17000, 180, 0); // X axis data
+  data.Y = map(ay, -17000, 17000, 180, 0); 
   data.Z = map(az, -17000, 17000, 0, 180);  // Y axis data
-  delay(50);
+  delay(70);
 
   Serial.print("  X = ");
   Serial.print(data.X);
+  servo1.write(data.X);
+
   Serial.print("  Y = ");
   Serial.print(data.Y);
+  servo2.write(data.Y);
+
   Serial.print("  Z  = ");
   Serial.println(data.Z);
-
-  servo1.write(data.X);
-  servo2.write(data.Y);
   servo3.write(data.Z);
 }
