@@ -524,7 +524,7 @@ void menu(){
 
   while(unavez == 1)
   {
-    while(milisPano > 100)
+    if(milisPano > 100)
       {
         if(valorServo >= 0)
         {
@@ -532,8 +532,7 @@ void menu(){
           servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
           milisPano = 0;
         }
-      }
-
+      
       if(digitalRead(SW)==LOW){
           if(digitalRead(SW)==HIGH){
             if(digitalRead(SW)==LOW){
@@ -543,6 +542,7 @@ void menu(){
             }
           }
         }
+      }
     }
   break;
   }
