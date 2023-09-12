@@ -497,22 +497,25 @@ void menu(){
 
     while(unavez == 1)
     {
-      if(valorServo >= 45)
-        {
-          valorServo = valorServo - 5;
-          servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
-          delay(100);
-        }
-
-      if(digitalRead(SW)==LOW){
-        if(digitalRead(SW)==HIGH){
-          if(digitalRead(SW)==LOW){
-            unavez = 0;
-            Menu = MODO_PANORAMICO;
-            flg2=1;
+      if(milisPano > 100)
+      {
+        if(valorServo >= 45)
+          {
+            valorServo = valorServo - 5;
+            servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
+            delay(100);
           }
-        }
-      }  
+
+        if(digitalRead(SW)==LOW){
+          if(digitalRead(SW)==HIGH){
+            if(digitalRead(SW)==LOW){
+              unavez = 0;
+              Menu = MODO_PANORAMICO;
+              flg2=1;
+            }
+          }
+        }  
+      }
     }
   break;
 
