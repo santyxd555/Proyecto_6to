@@ -304,11 +304,10 @@ void menu(){
   display.println("MANUAL");
   display.setCursor(6,30);
   display.println("AUTOMATICO");
-  valorServo = 90;
-  valorServo2 = 90;
   break;
 
   case MODO_MANUAL:
+  Serial.println("cacho");
     display.clearDisplay();
     display.setTextSize(2);
     display.setTextColor(WHITE);
@@ -316,8 +315,6 @@ void menu(){
     display.println(" MODO");
     display.setCursor(6,30);
     display.println("  MANUAL");
-    valorServo = 90;
-    valorServo2 = 90;
     unavez = 1;
     Menu = MODO_MAN_FUN;
     
@@ -497,25 +494,22 @@ void menu(){
 
     while(unavez == 1)
     {
-      if(milisPano > 100)
-      {
-        if(valorServo >= 45)
-          {
-            valorServo = valorServo - 5;
-            servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
-            delay(100);
-          }
+      if(valorServo >= 45)
+        {
+          valorServo = valorServo - 5;
+          servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
+          delay(100);
+        }
 
-        if(digitalRead(SW)==LOW){
-          if(digitalRead(SW)==HIGH){
-            if(digitalRead(SW)==LOW){
-              unavez = 0;
-              Menu = MODO_PANORAMICO;
-              flg2=1;
-            }
+      if(digitalRead(SW)==LOW){
+        if(digitalRead(SW)==HIGH){
+          if(digitalRead(SW)==LOW){
+            unavez = 0;
+            Menu = MODO_PANORAMICO;
+            flg2=1;
           }
-        }  
-      }
+        }
+      }  
     }
   break;
 
@@ -525,18 +519,18 @@ void menu(){
       servo1.write(valorServo);
       servo2.write(valorServo2);
 
-  while(unavez == 1)
-  {
-    if(milisPano > 100)
-      {
-        if(valorServo >= 0)
+    while(unavez == 1)
+    {
+      while(milisPano > 100)
         {
-          valorServo = valorServo - 5;
-          servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
-          milisPano = 0;
-        }
-      
-      if(digitalRead(SW)==LOW){
+          if(valorServo >= 0)
+          {
+            valorServo = valorServo - 5;
+            servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
+            milisPano = 0;
+          }
+        
+        if(digitalRead(SW)==LOW){
           if(digitalRead(SW)==HIGH){
             if(digitalRead(SW)==LOW){
               unavez = 0;
@@ -550,6 +544,7 @@ void menu(){
   break;
   }
 }
+
 
 //USAMOS EL TIMER 2 PARA CONTAR EL TIEMPO
 ISR(TIMER2_OVF_vect){
