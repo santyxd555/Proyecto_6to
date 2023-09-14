@@ -316,6 +316,8 @@ void menu(){
     display.setCursor(6,30);
     display.println("  MANUAL");
     unavez = 1;
+    valorServo = 135;
+    valorServo2 = 90;
     Menu = MODO_MAN_FUN;
     
   break;
@@ -494,19 +496,21 @@ void menu(){
 
     while(unavez == 1)
     {
-      if(valorServo >= 45)
+      if(milisPano > 100)
+      {
+        if(valorServo >= 45)
         {
           valorServo = valorServo - 5;
           servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
-          delay(100);
+          milisPano = 0;
         }
-
-      if(digitalRead(SW)==LOW){
-        if(digitalRead(SW)==HIGH){
-          if(digitalRead(SW)==LOW){
-            unavez = 0;
-            Menu = MODO_PANORAMICO;
-            flg2=1;
+        if(digitalRead(SW)==LOW){
+          if(digitalRead(SW)==HIGH){
+            if(digitalRead(SW)==LOW){
+              unavez = 0;
+              Menu = MODO_PANORAMICO;
+              flg2=1;
+            }
           }
         }
       }  
@@ -521,7 +525,7 @@ void menu(){
 
     while(unavez == 1)
     {
-      while(milisPano > 100)
+      if(milisPano > 100)
         {
           if(valorServo >= 0)
           {
