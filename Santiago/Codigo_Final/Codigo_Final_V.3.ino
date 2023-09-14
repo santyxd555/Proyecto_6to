@@ -307,7 +307,6 @@ void menu(){
   break;
 
   case MODO_MANUAL:
-  Serial.println("cacho");
     display.clearDisplay();
     display.setTextSize(2);
     display.setTextColor(WHITE);
@@ -470,21 +469,22 @@ void menu(){
   break;
 
   case MODO_MOV_FUN: //TODOS andan pero hay que ver lo del delay
-    while(unavez == 1 ){
-      if(digitalRead(SW) == LOW)
-        {
-          while(digitalRead(SW) == LOW)
-          {
-            
-          }
-        }
-        if(digitalRead(SW) == LOW)
-            {
+    while(unavez == 1 )
+    {
+      if(milisPano > 100)
+      {
+
+
+        if(digitalRead(SW)==LOW){
+          if(digitalRead(SW)==HIGH){
+            if(digitalRead(SW)==LOW){
               unavez = 0;
               Menu = MODO_AUTOMATICO;
               flg2=1;
             }
-        
+          }
+        }
+      } 
     }
   break;
 
