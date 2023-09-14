@@ -316,7 +316,7 @@ void menu(){
     display.setCursor(6,30);
     display.println("  MANUAL");
     unavez = 1;
-    valorServo = 135;
+    valorServo = 90;
     valorServo2 = 90;
     Menu = MODO_MAN_FUN;
     
