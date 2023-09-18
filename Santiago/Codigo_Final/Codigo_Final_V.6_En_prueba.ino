@@ -144,23 +144,22 @@ if(Menu == MENU_INICIAL)
     }
     
     ////////////////////////////////////////////
-    
-    if(Menu == MODO_MANUAL)
+    if(milisDelay > 500)
     {
-      if(milisDelay > 150)
+      if(Menu == MODO_MANUAL)
       {
         if(digitalRead(SW) == LOW && flg2==0)
         {
           if(milisDelay > 500)
           {
-          Cuad = CUAD_NADA; 
-          Menu = MENU_INICIAL; 
-          flg1 = 0;
-          milisDelay = 0;
+            Cuad = CUAD_NADA; 
+            Menu = MENU_INICIAL; 
+            flg1 = 0;
+            milisDelay = 0;
           }
         }
-        milisDelay = 0;
       }
+      milisDelay = 0;
     }
     
     ////////////////////////////////////////////
