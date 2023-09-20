@@ -555,17 +555,14 @@ void menu(){
             servo1.write(valorServo); //IMPRIME EL VALOR EN EL SERVO Z
             milisPano = 0;
           }
-        
-        if(digitalRead(SW)==HIGH){
+      }
+      if(digitalRead(SW)==HIGH){
           if(digitalRead(SW)==LOW){
-            if(digitalRead(SW)==HIGH){
-              unavez = 0;
-              Menu = MODO_PANORAMICO;
-              flg2=1;
-            }
+            unavez = 0;
+            Menu = MODO_PANORAMICO;
+            flg2=1;
           }
         }
-      }
     }
   break;
   }
